@@ -1,0 +1,28 @@
+<h2>MyComp view</h2>
+
+<ul>
+<% $.each(model.list, function (index) { %>
+	<li data-model="list[<%= index %>].item"></li>
+	<input data-model="list[<%= index %>].item">
+<% }); %>
+</ul>
+
+<p data-model="firstname"></p>
+
+<p>Name: <span data-model="firstname"></span>
+	<span data-model="surname"></span>
+</p>
+<p>Description: <span data-model="description"></span></p>
+
+<div><a href="#" id="print-model-console">Print model in console</a></div>
+
+<input type="text" data-model="firstname">
+<input type="text" data-model="surname">
+
+<textarea data-model="description"></textarea>
+
+<p data-model="deep.ob.list[1].article"></p>
+<input type="text" data-model="deep.ob.list[1].article">
+
+
+<div><a data-click="sayHey(333)" href="#">CLICK to say hey</a></div>
