@@ -13,7 +13,7 @@
                 submit: {
                     disabled: false,
                     text: 'Submit form',
-                    // sumbit: 'toggleForm' .... /// @todo add submit action function name and function() {}
+                    // sumbit: 'toggleForm' .... /// @todo add submit action function name and submit: function() {}
                 },
                 inputCar: {
                     disabled: false
@@ -24,7 +24,7 @@
                 }
             },
             events: {
-                'click #toggle-form': 'toggleForm'    /// @todo add function() {}
+                'click #toggle-form': 'toggleForm'    /// @todo add 'xxx yyy': function() {}
             },
             toggleForm: function (e) {
                 comp.form.submit.disabled = !comp.form.submit.disabled;
