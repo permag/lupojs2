@@ -11,11 +11,12 @@
             },
             form: {
                 submit: {
-                    disabled: true,
-                    text: 'Submit form'
+                    disabled: false,
+                    text: 'Submit form',
+                    // sumbit: 'toggleForm' .... /// @todo add submit action function name and function() {}
                 },
                 inputCar: {
-                    disabled: true
+                    disabled: false
                 },
                 inputTest: {
                     disabled: false,
@@ -23,10 +24,12 @@
                 }
             },
             events: {
-                'click #test': 'test'
+                'click #toggle-form': 'toggleForm'    /// @todo add function() {}
             },
-            test: function (e) {
-                alert("test");
+            toggleForm: function (e) {
+                comp.form.submit.disabled = !comp.form.submit.disabled;
+                comp.form.inputCar.disabled = !comp.form.inputCar.disabled;
+                comp.form.inputTest.disabled = !comp.form.inputTest.disabled;
             },
             render: function (model) {
                 if (model) {
@@ -35,6 +38,6 @@
                 lupo.render(comp);
             }
         };
-        return comp;
+        return {render: comp.render};
     };
 })(window, lupo, jQuery);

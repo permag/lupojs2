@@ -6,28 +6,27 @@
     }
 
     lupo.comps.myComp = function () {
-        var comp = {
-            view: 'app-view',
-            template: 'mycomp.html',
-            model: {},
-            events: {
-                'click #print-model-console': 'printModelInConsole'
-            },
-            click: {
-                sayHey: function (e, arg) {
-                    alert('sayHey! ' + arg);
-                }
-            },
-            printModelInConsole: function (e) {
-                printModelInConsole(e, comp);
-            },
-            render: function (model) {
-                if (model) {
-                    comp.model = model;
-                }
-                lupo.render(comp);
+        var comp = {};
+        comp.view = 'app-view';
+        comp.template = 'mycomp.html';
+        comp.model = {};
+        comp.events = {
+            'click #print-model-console': 'printModelInConsole'
+        };
+        comp.click = {
+            sayHey: function (e, arg) {
+                alert('sayHey! ' + arg);
             }
         };
-        return comp;
+        comp.printModelInConsole = function (e) {
+            printModelInConsole(e, comp);
+        };
+        comp.render = function (model) {
+            if (model) {
+                comp.model = model;
+            }
+            lupo.render(comp);
+        };
+        return {render: comp.render};
     };
 })(window, lupo, jQuery);
