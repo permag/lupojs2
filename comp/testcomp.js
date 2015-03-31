@@ -13,7 +13,8 @@
                 submit: {
                     disabled: false,
                     text: 'Submit form',
-                    // sumbit: 'toggleForm' .... /// @todo add submit action function name and submit: function() {}
+                    // click: 'toggleForm'
+                    click: function (e) {alert('Submit')}
                 },
                 inputCar: {
                     disabled: false
@@ -24,7 +25,10 @@
                 }
             },
             events: {
-                'click #toggle-form': 'toggleForm'    /// @todo add 'xxx yyy': function() {}
+                'click #toggle-form': 'toggleForm',
+                'click .anonymous-func': function (e) {
+                    alert('Anonymous function expression.');
+                }
             },
             toggleForm: function (e) {
                 comp.form.submit.disabled = !comp.form.submit.disabled;
