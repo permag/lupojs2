@@ -1,32 +1,32 @@
 /// myComp
 (function (window, lupo, $, undefined) {
 
-    function printModelInConsole (e, comp) {
-        console.log(comp.model);
+    function printModelInConsole (e, scope) {
+        console.log(scope.model);
     }
 
     lupo.comps.myComp = function () {
-        var comp = {};
-        comp.view = 'app-view';
-        comp.template = 'mycomp.html';
-        comp.model = {};
-        comp.events = {
+        var scope = {};
+        scope.view = 'app-view';
+        scope.template = 'mycomp.html';
+        scope.model = {};
+        scope.events = {
             'click #print-model-console': 'printModelInConsole'
         };
-        comp.click = {
+        scope.click = {
             sayHey: function (e, arg) {
                 alert('sayHey! ' + arg);
             }
         };
-        comp.printModelInConsole = function (e) {
-            printModelInConsole(e, comp);
+        scope.printModelInConsole = function (e) {
+            printModelInConsole(e, scope);
         };
-        comp.render = function (model) {
+        scope.render = function (model) {
             if (model) {
-                comp.model = model;
+                scope.model = model;
             }
-            lupo.render(comp);
+            lupo.render(scope);
         };
-        return {render: comp.render};
+        return {render: scope.render};
     };
 })(window, lupo, jQuery);

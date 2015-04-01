@@ -2,7 +2,7 @@
 (function (window, lupo, $, undefined) {
 
     lupo.comps.testComp = function () {
-        var comp = {
+        var scope = {
             view: 'test-view',
             template: 'testcomp.html',
             model: {
@@ -31,17 +31,17 @@
                 }
             },
             toggleForm: function (e) {
-                comp.form.submit.disabled = !comp.form.submit.disabled;
-                comp.form.inputCar.disabled = !comp.form.inputCar.disabled;
-                comp.form.inputTest.disabled = !comp.form.inputTest.disabled;
+                scope.form.submit.disabled = !scope.form.submit.disabled;
+                scope.form.inputCar.disabled = !scope.form.inputCar.disabled;
+                scope.form.inputTest.disabled = !scope.form.inputTest.disabled;
             },
             render: function (model) {
                 if (model) {
-                    comp.model = model;
+                    scope.model = model;
                 }
-                lupo.render(comp);
+                lupo.render(scope);
             }
         };
-        return {render: comp.render};
+        return {render: scope.render};
     };
 })(window, lupo, jQuery);
