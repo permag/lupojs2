@@ -3,6 +3,7 @@
 	<head>
 		<title></title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script src="./lib/lupo.js"></script>
 		<script src="./lib/watch.min.js"></script>
@@ -11,9 +12,11 @@
 		<script src="app.js"></script>
 	</head>
 	<body>
-
-		<div data-view="app-view"></div>
-
-		<div data-view="test-view"></div>
+		<div class="row">
+			<div class="small-6 columns">
+				<div data-view="app-view"></div>
+				<div data-view="test-view"></div>
+			</div>
+		</div>
 	</body>
 </html>

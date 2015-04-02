@@ -1,9 +1,10 @@
 <h2>MyComp view</h2>
+<a href="#!/testcomp">TestComp route</a>
 
 <ul>
 <% $.each(model.list, function (index) { %>
 	<li data-model="list[<%= index %>].item"></li>
-	<input data-model="list[<%= index %>].item">
+	<input type="text" data-model="list[<%= index %>].item">
 <% }); %>
 </ul>
 
@@ -25,4 +26,4 @@
 <input type="text" data-model="deep.ob.list[1].article">
 
 
-<div><a data-click="sayHey(333)" href="#">CLICK to say hey</a></div>
+<div><a data-click="sayHey(333)" href="#">Click to say hey with 333 as argument.</a></div>

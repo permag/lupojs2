@@ -1,6 +1,8 @@
 $(function () {
     /// APP
-    var myModel = {
+    var myComp = lupo.comps.myComp(),
+        testComp = lupo.comps.testComp(),
+        testModel = {
         firstname: 'John',
         surname: 'Smith',
         description: '<h3>A short text...</h3>',
@@ -20,6 +22,7 @@ $(function () {
         }
     };
 
+    // Routes
     lupo.router({
         '/': function() {
             myCompRoute();
@@ -28,14 +31,12 @@ $(function () {
         '/testcomp': testCompRoute
     });
 
+    // Route functions
     function myCompRoute() {
-        var myComp = lupo.comps.myComp();
-        myComp.render({model: myModel, view: 'app-view'});
+        myComp.render({model: testModel, view: 'app-view'});
     }
 
     function testCompRoute() {
-        var testComp = lupo.comps.testComp();
         testComp.render({view: 'app-view'});
     }
-
 });
