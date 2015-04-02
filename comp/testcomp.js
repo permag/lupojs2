@@ -35,9 +35,12 @@
                 scope.form.inputCar.disabled = !scope.form.inputCar.disabled;
                 scope.form.inputTest.disabled = !scope.form.inputTest.disabled;
             },
-            render: function (model) {
-                if (model) {
-                    scope.model = model;
+            render: function (ob) {
+                if (ob.model) {
+                    scope.model = ob.model;
+                }
+                if (ob.view) {
+                    scope.view = ob.view;
                 }
                 lupo.render(scope);
             }

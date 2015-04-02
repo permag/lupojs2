@@ -21,9 +21,12 @@
         scope.printModelInConsole = function (e) {
             printModelInConsole(e, scope);
         };
-        scope.render = function (model) {
-            if (model) {
-                scope.model = model;
+        scope.render = function (ob) {
+            if (ob.model) {
+                scope.model = ob.model;
+            }
+            if (ob.view) {
+                scope.view = ob.view;
             }
             lupo.render(scope);
         };

@@ -20,9 +20,22 @@ $(function () {
         }
     };
 
-    var myComp = lupo.comps.myComp();
-    myComp.render(myModel);
+    lupo.router({
+        '/': function(){
+            alert('This is the root.')
+        },
+        '/mycomp': myCompRoute,
+        '/testcomp': testCompRoute
+    });
 
-    var testComp = lupo.comps.testComp();
-    testComp.render();
+    function myCompRoute() {
+        var myComp = lupo.comps.myComp();
+        myComp.render({model: myModel, view: 'app-view'});
+    }
+
+    function testCompRoute() {
+        var testComp = lupo.comps.testComp();
+        testComp.render({view: 'app-view'});
+    }
+
 });
