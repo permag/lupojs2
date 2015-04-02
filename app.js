@@ -21,8 +21,8 @@ $(function () {
     };
 
     lupo.router({
-        '/': function(){
-            alert('This is the root.')
+        '/': function() {
+            myCompRoute();
         },
         '/mycomp': myCompRoute,
         '/testcomp': testCompRoute
