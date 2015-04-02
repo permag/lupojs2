@@ -20,8 +20,7 @@
                     disabled: false
                 },
                 inputTest: {
-                    disabled: false,
-                    text: 'Hello'
+                    disabled: false
                 }
             },
             events: {
