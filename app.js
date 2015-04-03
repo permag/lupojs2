@@ -49,6 +49,11 @@ $(function () {
         '/testcomp': testCompRoute,
         '/list': listCompRoute,
         '/item/:id': itemCompRoute
+    },
+    {
+        before: function () {
+            console.log('before routing');
+        }
     });
 
     // Route functions
@@ -67,6 +72,5 @@ $(function () {
     function itemCompRoute(id) {
         var modelItem = lupo.getObjectItem(listModel.list, 'id', id);
         itemComp.render({model: modelItem});
-
     }
 });
