@@ -1,10 +1,10 @@
 var model;
 $(function () {
     /// APP
-    var myComp = lupo.comps.myComp(),
-        testComp = lupo.comps.testComp(),
-        listComp = lupo.comps.listComp(),
-        itemComp = lupo.comps.itemComp(),
+    var myComp = lupo.component.myComp(),
+        testComp = lupo.component.testComp(),
+        listComp = lupo.component.listComp(),
+        itemComp = lupo.component.itemComp(),
         testModel = {
             firstname: 'John',
             surname: 'Smith',

@@ -1,7 +1,7 @@
 /// itemComp
 (function (window, document, lupo, $, undefined) {
 
-    lupo.comps.itemComp = function () {
+    lupo.component.itemComp = function () {
         var scope = {};
         scope.view = 'app-view';
         scope.template = 'itemcomp.html';

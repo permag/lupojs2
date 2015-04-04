@@ -1,12 +1,11 @@
 /// myComp
-(function (window, lupo, $, undefined) {
+(function (window, document, lupo, $, undefined) {
 
     function printModelInConsole (e, scope) {
         console.log(scope.model);
     }
 
-    lupo.comps.myComp = function () {
-        var scope = {};
+    lupo.defineComponent('myComp', function (scope) {
         scope.view = 'app-view';
         scope.template = 'mycomp.html';
         scope.model = {};
@@ -30,6 +29,6 @@
             }
             lupo.render(scope);
         };
-        return {render: scope.render};
-    };
-})(window, lupo, jQuery);
+    });
+
+})(window, document, lupo, jQuery);

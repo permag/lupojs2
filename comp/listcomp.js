@@ -1,7 +1,7 @@
 /// listComp
 (function (window, document, lupo, $, undefined) {
 
-    lupo.comps.listComp = function () {
+    lupo.component.listComp = function () {
         var scope = {};
         scope.view = 'app-view';
         scope.template = 'listcomp.html';
