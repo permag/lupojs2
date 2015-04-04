@@ -9,11 +9,12 @@
         scope.events = {};
 
         scope.render = function (ob) {
-            if (ob.model) {
-                scope.model = ob.model;
+            if (ob.model && ob.id) {
+                scope.model = lupo.getObjectItem(ob.model.list, 'id', ob.id);
+                lupo.render(scope);
             }
-            lupo.render(scope);
         };
         return {render: scope.render};
     };
+
 })(window, document, lupo, jQuery);
