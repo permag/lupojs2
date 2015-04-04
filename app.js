@@ -1,3 +1,4 @@
+var model;
 $(function () {
     /// APP
     var myComp = lupo.comps.myComp(),
@@ -40,6 +41,9 @@ $(function () {
             ]
         };
 
+    /////// make global for testing
+    model = listModel;
+
     // Routes
     lupo.router({
         '/': function() {
@@ -70,7 +74,6 @@ $(function () {
     }
 
     function itemCompRoute(id) {
-        var modelItem = lupo.getObjectItem(listModel.list, 'id', id);
-        itemComp.render({model: modelItem});
+        itemComp.render({model: listModel, id: id});
     }
 });
