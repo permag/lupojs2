@@ -1,5 +1,4 @@
-var model;
-$(function () {
+var app = function () {
     /// APP
     var myComp = lupo.component.myComp(),
         testComp = lupo.component.testComp(),
@@ -76,4 +75,9 @@ $(function () {
     function itemCompRoute(id) {
         itemComp.render({model: listModel, id: id});
     }
+
+};
+
+$(function () {
+    app();
 });

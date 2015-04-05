@@ -1,6 +1,5 @@
 /// testComp
 lupo.defineComponent('testComp', function (scope) {
-
     scope.view = 'test-view';
     scope.template = 'testcomp.html';
     scope.model = {
@@ -12,7 +11,7 @@ lupo.defineComponent('testComp', function (scope) {
             disabled: false,
             text: 'Submit form',
             // click: 'toggleForm'
-            click: function (e) {alert('Submit')}
+            click: function (e) {alert('Submit');}
         },
         inputCar: {
             disabled: false
@@ -47,4 +46,3 @@ lupo.defineComponent('testComp', function (scope) {
     return {hello: 'Hello!'};
 
 });
-
