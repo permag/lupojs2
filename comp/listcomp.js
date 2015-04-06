@@ -15,6 +15,13 @@
         scope.model.list.push(item);
     }
 
+    function deleteItem(scope, id) {
+        var list = scope.model.list,
+            item = lupo.getObjectItem(list, 'id', id),
+            index = list.indexOf(item);
+        list.splice(index, 1);
+    }
+
     lupo.defineComponent('listComp', function (scope) {
         scope.view = 'app-view';
         scope.template = 'listcomp.html';
@@ -36,5 +43,12 @@
                 }
             }
         };
+        scope.click = {
+            removeItem: function (e, id) {
+                e.preventDefault();
+                deleteItem(scope, id);
+            }
+        };
     });
+
 })(window, document, lupo, jQuery);

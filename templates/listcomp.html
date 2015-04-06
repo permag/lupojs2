@@ -9,6 +9,7 @@
 			<span data-model="list[<%= i %>].firstname"></span> <span data-model="list[<%= i %>].surname"></span>:
 			<span data-model="list[<%= i %>].age"></span>
 			<a href="#!/item/<%= model.list[i].id %>">Edit</a>
+			<a href="#" data-click="removeItem(<%= model.list[i].id %>)">Remove</a>
 		</li>
 		<% }); %>
 	</ul>
