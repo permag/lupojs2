@@ -1,51 +1,50 @@
-var app = function () {
-    /// APP
+// Test model, global for testing.
+var testModel = {
+    firstname: 'John',
+    surname: 'Smith',
+    description: '<h3>A short text...</h3>',
+    list: [
+        {item: 'item 1'},
+        {item: 'item 2'},
+        {item: 'item 3'}
+    ],
+    deep: {
+        ob: {
+            list: [
+                {article: 'article 1'},
+                {article: 'article 2'},
+                {article: 'article 3'}
+            ]
+        }
+    }
+},
+listModel = {
+    list: [
+        {
+            id: 1,
+            firstname: 'Homer',
+            surname: 'Simpson',
+            age: 33
+        },
+        {
+            id: 2,
+            firstname: 'Peter',
+            surname: 'Griffin',
+            age: 41
+        }
+    ]
+};
+
+lupo.defineApp('myApp', function (config) {
+
+    // Components
     var myComp = lupo.component.myComp(),
         testComp = lupo.component.testComp(),
         listComp = lupo.component.listComp(),
-        itemComp = lupo.component.itemComp(),
-        testModel = {
-            firstname: 'John',
-            surname: 'Smith',
-            description: '<h3>A short text...</h3>',
-            list: [
-                {item: 'item 1'},
-                {item: 'item 2'},
-                {item: 'item 3'}
-            ],
-            deep: {
-                ob: {
-                    list: [
-                        {article: 'article 1'},
-                        {article: 'article 2'},
-                        {article: 'article 3'}
-                    ]
-                }
-            }
-        },
-        listModel = {
-            list: [
-                {
-                    id: 1,
-                    firstname: 'Homer',
-                    surname: 'Simpson',
-                    age: 33
-                },
-                {
-                    id: 2,
-                    firstname: 'Peter',
-                    surname: 'Griffin',
-                    age: 41
-                }
-            ]
-        };
-
-    /////// make global for testing
-    modelTest = testModel;
-    model = listModel;
+        itemComp = lupo.component.itemComp();
 
     // Routes
-    lupo.router({
+    config.router({
         '/': function() {
             myCompRoute();
         },
@@ -56,7 +55,7 @@ var app = function () {
     },
     {
         before: function () {
-            console.log('before routing');
+            // console.log('before routing');
         }
     });
 
@@ -76,9 +75,4 @@ var app = function () {
     function itemCompRoute(id) {
         itemComp.render({model: listModel, id: id});
     }
-
-};
-
-$(function () {
-    app();
 });
