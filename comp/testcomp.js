@@ -7,17 +7,17 @@ lupo.defineComponent('testComp', function (scope) {
         car: 'VW Golf'
     };
     scope.form = {
+        name: {
+            disabled: false
+        },
+        car: {
+            disabled: false
+        },
         submit: {
             disabled: false,
-            text: 'Submit form',
+            value: 'Submit form',
             // click: 'toggleForm'
             click: function (e) {alert('Submit');}
-        },
-        inputCar: {
-            disabled: false
-        },
-        inputTest: {
-            disabled: false
         }
     };
     scope.events = {
@@ -28,8 +28,8 @@ lupo.defineComponent('testComp', function (scope) {
     };
     scope.toggleForm = function (e) {
         scope.form.submit.disabled = !scope.form.submit.disabled;
-        scope.form.inputCar.disabled = !scope.form.inputCar.disabled;
-        scope.form.inputTest.disabled = !scope.form.inputTest.disabled;
+        scope.form.car.disabled = !scope.form.car.disabled;
+        scope.form.name.disabled = !scope.form.name.disabled;
     };
     // Override default render method.
     scope.render = function (ob) {

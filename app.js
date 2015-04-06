@@ -41,6 +41,7 @@ var app = function () {
         };
 
     /////// make global for testing
+    modelTest = testModel;
     model = listModel;
 
     // Routes

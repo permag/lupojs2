@@ -1,0 +1,43 @@
+
+<div class="row">
+	<h2>MyComp</h2>
+	<h5>Example of model/view sync.</h5>
+</div>
+
+<div class="row">
+	<div class="small-12 medium-9 columns">
+
+		<form class="small-12 medium-6 columns">
+			<input type="text" data-model="firstname">
+			<input type="text" data-model="surname">
+			<textarea data-model="description"></textarea>
+		</form>
+
+		<div class="small-12 medium-6 columns">
+			<p>
+				Name: <span data-model="firstname"></span> <span data-model="surname"></span>
+			</p>
+			<p>
+				Description: <span data-model="description"></span>
+			</p>
+		</div>
+
+		<div class="row">
+			<div class="small-12 columns">
+				<div><a href="#" id="print-model-console" class="button">Print model in console</a></div>
+				<div><a data-click="sayHey(333)" href="#" class="button">Click to say hey with 333 as argument.</a></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="small-12 medium-3 columns panel">
+		<ul>
+		<% $.each(model.list, function (index) { %>
+			<li data-model="list[<%= index %>].item"></li>
+			<input type="text" data-model="list[<%= index %>].item">
+		<% }); %>
+		</ul>
+	</div>
+
+</div>

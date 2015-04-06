@@ -1,0 +1,30 @@
+<h1>List</h1>
+
+<div class="small-12 medium-6 columns">
+	<h4>Items</h4>
+
+	<ul>
+		<% $.each(model.list, function (i) { %>
+		<li>
+			<span data-model="list[<%= i %>].firstname"></span> <span data-model="list[<%= i %>].surname"></span>:
+			<span data-model="list[<%= i %>].age"></span>
+			<a href="#!/item/<%= model.list[i].id %>">Edit</a>
+		</li>
+		<% }); %>
+	</ul>
+</div>
+
+
+<div class="small-12 medium-6 columns">
+	<h4>Add item</h4>
+
+	<form>
+		<label>First name</label>
+		<input type="text" data-form="firstname">
+		<label>Surname</label>
+		<input type="text" data-form="surname">
+		<label>Age</label>
+		<input type="text" data-form="age">
+		<button data-form="addButton">Add</button>
+	</form>
+</div>
