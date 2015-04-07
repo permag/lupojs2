@@ -36,7 +36,6 @@ listModel = {
 };
 
 lupo.defineApp('myApp', function (config) {
-
     // Components
     var myComp = lupo.component.myComp(),
         testComp = lupo.component.testComp(),
