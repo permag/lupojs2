@@ -1,20 +1,17 @@
 /// itemComp
 (function (window, document, lupo, $, undefined) {
 
-    lupo.component.itemComp = function () {
-        var scope = {};
+   lupo.defineComponent('itemComp', function (scope) {
         scope.view = 'app-view';
         scope.template = 'itemcomp.html';
         scope.model = {};
         scope.events = {};
 
-        scope.render = function (ob) {
-            if (ob.model && ob.id) {
-                scope.model = lupo.getObjectItem(ob.model.list, 'id', ob.id);
-                lupo.render(scope);
+        scope.init = function (inputOb) {
+            if (inputOb.model && inputOb.id) {
+                scope.model = lupo.utils.getObjectItem(inputOb.model.list, 'id', inputOb.id);
             }
         };
-        return {render: scope.render};
-    };
+    });
 
 })(window, document, lupo, jQuery);

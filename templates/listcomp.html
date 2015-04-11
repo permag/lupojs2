@@ -4,6 +4,7 @@
 	<h4>Items</h4>
 
 	<ul>
+	<!--<%= Math.floor(Math.random() * 50) + 1 %>-->
 		<% $.each(model.list, function (i) { %>
 		<li>
 			<span data-model="list[<%= i %>].firstname"></span> <span data-model="list[<%= i %>].surname"></span>:

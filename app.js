@@ -60,18 +60,18 @@ lupo.defineApp('myApp', function (config) {
 
     // Route functions
     function myCompRoute() {
-        myComp.render({model: testModel, view: 'app-view'});
+        myComp.run({model: testModel, view: 'app-view'});
     }
 
     function testCompRoute() {
-        testComp.render({view: 'app-view'});
+        testComp.run({view: 'app-view'});
     }
 
     function listCompRoute() {
-        listComp.render({model: listModel});
+        listComp.run({model: listModel});
     }
 
     function itemCompRoute(id) {
-        itemComp.render({model: listModel, id: id});
+        itemComp.run({model: listModel, id: id});
     }
 });

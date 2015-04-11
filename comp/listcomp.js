@@ -17,7 +17,7 @@
 
     function deleteItem(scope, id) {
         var list = scope.model.list,
-            item = lupo.getObjectItem(list, 'id', id),
+            item = lupo.utils.getObjectItem(list, 'id', id),
             index = list.indexOf(item);
         list.splice(index, 1);
     }
@@ -26,6 +26,19 @@
         scope.view = 'app-view';
         scope.template = 'listcomp.html';
         scope.model = {};
+
+        scope.init = function (inputOb) {
+            doSort(scope.model.list, 'firstname');
+            function doSort(array, prop) {
+                array.sort(compare);
+                function compare(a, b) {
+                    if (a[prop].toLowerCase() < b[prop].toLowerCase()) return -1;
+                    if (a[prop].toLowerCase() > b[prop].toLowerCase()) return 1;
+                    return 0;
+                }
+            }
+        };
+
         scope.form = {
             firstname: {
                 value: ''
